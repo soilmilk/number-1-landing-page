@@ -12,7 +12,7 @@ const Hero = () => {
           alt="Number 1 Hair Studio Interior"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
       </div>
 
@@ -23,10 +23,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-full px-4 py-2 mb-6 animate-fade-up">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-gold text-gold"
-                />
+                <Star key={i} className="w-4 h-4 fill-gold text-gold" />
               ))}
             </div>
             <span className="text-sm text-muted-foreground">
@@ -35,20 +32,29 @@ const Hero = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1
+            className="font-serif text-5xl md:text-7xl font-bold mb-6 animate-fade-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             <span className="text-foreground">Premium</span>
             <br />
             <span className="text-gradient-gold">Grooming Experience</span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Where classic craftsmanship meets modern style. Experience the art of
-            precision barbering at Blacksburg's premier hair studio.
+          <p
+            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Where classic craftsmanship meets modern style. Experience the art
+            of precision barbering at Blacksburg's premier hair studio.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div
+            className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up"
+            style={{ animationDelay: "0.3s" }}
+          >
             <a href="tel:4342351766">
               <Button variant="gold" size="xl">
                 <Phone className="w-5 h-5" />
@@ -63,7 +69,10 @@ const Hero = () => {
           </div>
 
           {/* Location */}
-          <div className="flex items-center gap-2 text-muted-foreground animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <div
+            className="flex items-center gap-2 text-muted-foreground animate-fade-up"
+            style={{ animationDelay: "0.4s" }}
+          >
             <MapPin className="w-5 h-5 text-gold" />
             <span>460 Turner St NW Ste 208, Blacksburg, VA 24060</span>
           </div>
