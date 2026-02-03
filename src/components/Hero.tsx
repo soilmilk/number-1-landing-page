@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Star, Phone } from "lucide-react";
+import { MapPin, Star, Phone, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-barbershop.jpg";
 
 const Hero = () => {
@@ -55,10 +55,14 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <a href="tel:4342351766">
+            <a
+              href="https://calendly.com/qiumike0/hair-appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="gold" size="xl">
-                <Phone className="w-5 h-5" />
-                Call to Book
+                <Calendar className="w-5 h-5" />
+                Book Now
               </Button>
             </a>
             <a href="#services">

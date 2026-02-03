@@ -10,13 +10,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         gold: "bg-gradient-to-r from-gold to-gold-light text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
-        goldOutline: "border-2 border-gold text-gold hover:bg-gold/10 font-semibold",
+        goldOutline:
+          "border-2 border-gold text-gold hover:bg-gold/10 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -34,15 +38,33 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  href?: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+const Button = React.forwardRef<HTMLElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, href, ...props }, ref) => {
+    const Comp: any = asChild ? Slot : href ? "a" : "button";
+    const componentProps = href
+      ? ({
+          href,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          ...props,
+        } as React.AnchorHTMLAttributes<HTMLAnchorElement>)
+      : (props as React.ButtonHTMLAttributes<HTMLButtonElement>);
+
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref as any}
+        {...componentProps}
+      />
+    );
   },
 );
 Button.displayName = "Button";

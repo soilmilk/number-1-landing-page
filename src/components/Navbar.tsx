@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +45,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "#services", label: "Services" },
-    { href: "#about", label: "About" },
-    { href: "/gallery", label: "Gallery" },
+    { href: "#about", label: "Book" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -84,9 +83,13 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
-            <a href="tel:4342351766">
+            <a
+              href="https://calendly.com/qiumike0/hair-appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="gold" size="lg">
-                <Phone className="w-4 h-4" />
+                <Calendar className="w-4 h-4" />
                 Book Now
               </Button>
             </a>
@@ -114,9 +117,14 @@ const Navbar = () => {
                   {link.label}
                 </button>
               ))}
-              <a href="tel:4342351766">
+              <a
+                href="https://calendly.com/qiumike0/hair-appointment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
                 <Button variant="gold" size="lg" className="w-full mt-2">
-                  <Phone className="w-4 h-4" />
+                  <Calendar className="w-4 h-4" />
                   Book Now
                 </Button>
               </a>

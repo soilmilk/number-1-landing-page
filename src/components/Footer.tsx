@@ -39,7 +39,7 @@ const Footer = () => {
                 href="#about"
                 className="block text-muted-foreground hover:text-gold transition-colors"
               >
-                About Us
+                Book Now
               </a>
               <a
                 href="#contact"

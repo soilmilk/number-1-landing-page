@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation, Calendar } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -73,16 +73,20 @@ const Contact = () => {
                   Hours
                 </h3>
                 <div className="text-muted-foreground space-y-1">
-                  <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                  <p>Sunday: 10:00 AM - 5:00 PM</p>
+                  <p>Monday - Sunday: 10:00 AM - 7:00 PM</p>
                 </div>
               </div>
             </div>
 
-            <a href="tel:4342351766" className="block">
+            <a
+              href="https://calendly.com/qiumike0/hair-appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
               <Button variant="gold" size="xl" className="w-full mt-4">
-                <Phone className="w-5 h-5" />
-                Call Now to Book
+                <Calendar className="w-5 h-5" />
+                Book now in Calendly!
               </Button>
             </a>
           </div>

@@ -37,29 +37,28 @@ const About = () => {
               Blacksburg's <span className="text-gradient-gold">Premier</span>{" "}
               Hair Studio
             </h2>
-            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Number 1 Hair Studio has been serving the Blacksburg community
-              with exceptional grooming services. We believe that a great
-              haircut is more than just a service — it's an experience.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Welcome to Number 1 Hair Studio, where expert craftsmanship meets
+              modern style. Our team of skilled professionals is dedicated to
+              delivering exceptional haircuts and styling services in a warm,
+              welcoming environment.
             </p>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Our skilled barbers combine traditional techniques with modern
-              styles to give you the perfect look every time. Whether you're
-              coming in for a quick trim or a complete transformation, we're
-              here to make you look and feel your best.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Whether you're looking for a classic cut, a trendy style, or
+              specialized treatments, we've got you covered. With over a decade
+              of combined experience, we take pride in making every client feel
+              valued and confident.
             </p>
-
-            {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               {features.map((feature) => (
                 <div key={feature.title} className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
                     <feature.icon className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">
+                    <h3 className="font-semibold text-foreground mb-1">
                       {feature.title}
-                    </h4>
+                    </h3>
                     <p className="text-sm text-muted-foreground">
                       {feature.description}
                     </p>
@@ -70,26 +69,26 @@ const About = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300 flex flex-col justify-center">
               <div className="text-5xl font-serif font-bold text-gradient-gold mb-2">
                 4.8
               </div>
               <p className="text-muted-foreground">Google Rating</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300">
+            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300 flex flex-col justify-center">
               <div className="text-5xl font-serif font-bold text-gradient-gold mb-2">
                 82+
               </div>
               <p className="text-muted-foreground">Happy Reviews</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300">
+            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300 flex flex-col justify-center">
               <div className="text-5xl font-serif font-bold text-gradient-gold mb-2">
                 7
               </div>
               <p className="text-muted-foreground">Days a Week</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300">
+            <div className="bg-card border border-border rounded-2xl p-8 text-center hover:border-gold/50 transition-colors duration-300 flex flex-col justify-center">
               <div className="text-5xl font-serif font-bold text-gradient-gold mb-2">
                 ★
               </div>
