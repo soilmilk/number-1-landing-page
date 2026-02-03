@@ -9,7 +9,8 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Number 1 Hair Studio Interior"
+          alt="Number 1 Hair Studio — Modern barbershop interior with comfortable seating"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/40" />

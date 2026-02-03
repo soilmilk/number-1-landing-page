@@ -33,6 +33,7 @@
     <meta name="twitter:image" content="/assets/logo.png" />
 
     <!-- Performance & fonts -->
+    <link rel="preload" as="image" href="/assets/hero-barbershop.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -40,6 +41,48 @@
       crossorigin="anonymous"
     />
     <link rel="canonical" href="https://number1hairstudio.com/" />
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HairSalon",
+        "name": "Number 1 Hair Studio",
+        "image": "https://number1hairstudio.com/assets/logo.png",
+        "@id": "https://number1hairstudio.com/",
+        "url": "https://number1hairstudio.com/",
+        "telephone": "+1-434-235-1766",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "460 Turner St NW Ste 208",
+          "addressLocality": "Blacksburg",
+          "addressRegion": "VA",
+          "postalCode": "24060",
+          "addressCountry": "US"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "82"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>

@@ -101,7 +101,7 @@ const Contact = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Number 1 Hair Studio Location"
+              title="Google Map: Number 1 Hair Studio at 460 Turner St NW, Blacksburg VA 24060"
               className="grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>

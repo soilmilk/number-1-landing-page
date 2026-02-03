@@ -128,7 +128,8 @@ const Services = () => {
                   <div className="relative w-full h-48 overflow-hidden bg-secondary">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} service at Number 1 Hair Studio - ${service.zh}`}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
