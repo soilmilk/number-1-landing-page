@@ -56,7 +56,7 @@ const services = [
     icon: Sparkles,
     title: "Japanese Straighten",
     zh: "拉直",
-    price: "Contact",
+    price: "$220",
     description: "Long-lasting straightening service.",
   },
   {

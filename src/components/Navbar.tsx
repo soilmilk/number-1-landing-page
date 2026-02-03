@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +17,36 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      // If on home page, just scroll to section
+      if (location.pathname === "/") {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // If on another page, navigate to home then scroll
+        navigate("/", { replace: false });
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          element?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      // For non-hash links (like /gallery), just navigate
+      navigate(href);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
+
   const navLinks = [
     { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
+    { href: "/gallery", label: "Gallery" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -31,25 +61,28 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <button
+            onClick={handleLogoClick}
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
             <span className="font-serif text-2xl font-bold text-gradient-gold">
               Number 1
             </span>
             <span className="font-serif text-2xl font-light text-foreground">
               Hair Studio
             </span>
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <a href="tel:4342351766">
               <Button variant="gold" size="lg">
@@ -73,14 +106,13 @@ const Navbar = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium py-2 text-left"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <a href="tel:4342351766">
                 <Button variant="gold" size="lg" className="w-full mt-2">

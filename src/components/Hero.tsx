@@ -38,7 +38,7 @@ const Hero = () => {
           >
             <span className="text-foreground">Premium</span>
             <br />
-            <span className="text-gradient-gold">Grooming Experience</span>
+            <span className="text-gradient-gold">Haircut Experience</span>
           </h1>
 
           {/* Description */}
